@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 @Controller
 public class BoardController {
 
@@ -21,11 +22,14 @@ public class BoardController {
         return "boardwrite";
     }
     @PostMapping("/board/writepro")
-    public String boardWritePro(Board board){
+    public String boardWritePro(Board board, Model model){
 
         boardService.write(board);
 
-        return "";
+        model.addAttribute("message", "글 작성이 완료되었습니다.");
+        model.addAttribute("searchUrl", "/board/list");
+
+        return "message";
     }
 
     @GetMapping("/board/list")
