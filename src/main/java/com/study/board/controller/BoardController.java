@@ -27,6 +27,8 @@ public class BoardController {
         boardService.write(board);
 
         model.addAttribute("message", "글 작성이 완료되었습니다.");
+        model.addAttribute("message", "글 작성이 실패되었습니다.");
+
         model.addAttribute("searchUrl", "/board/list");
 
         return "message";
