@@ -17,7 +17,7 @@ public class BoardController {
 
     @Autowired
     private BoardService boardService;
-    @GetMapping("/board/write") //localhost:8080/board/write
+    @GetMapping("/board/write") //localhost:8080/board/write < --
     public String boardWriteForm(){
 
         return "boardwrite";
